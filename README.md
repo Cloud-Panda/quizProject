@@ -1,1 +1,1 @@
-# quizProject
+# quiz
