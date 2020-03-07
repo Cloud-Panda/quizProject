@@ -1,4 +1,5 @@
 <?php
+  session_start();
 
   $questions = array(
     "Question 1",
@@ -17,7 +18,32 @@
   );
 
   $correct_answers = array("B", "F", "J", "N", "Q");
+ /*Out put of answers */
+  if (isset($_POST['submit'])) {
+    $answer_1 = $_POST['answer-0'];
+    $answer_2 = $_POST['answer-1'];
+    $answer_3 = $_POST['answer-2'];
+    $answer_4 = $_POST['answer-3'];
+    $answer_5 = $_POST['answer-4'];
 
+/*Scoring */
+    $score = $_SESSION['score'];
+    
+    if ($answer_1 == $correct_answers[0]) {
+      $score++;
+    } if ($answer_2 == $correct_answers[1]) {
+      $score++;
+    } if ($answer_3 == $correct_answers[2]) {
+      $score++;
+    } if ($answer_4 == $correct_answers[3]) {
+      $score++;
+    } if ($answer_5 == $correct_answers[4]) {
+      $score++;
+    }
+    
+    $_SESSION['score'] = $score;
+  }
+  /*Process of scoring */
   if (!isset($_SESSION['set']) || !isset($_POST['submit']))
   {
     $_SESSION['score'] = 0;
@@ -94,7 +120,8 @@
     
 </head>
 <body>
-  <form method="post" action="quiz.php" class="form">
+  <form method="post" action="process.php" class="form">
+  <!--Output of questions and answers-->
     <?php
       if ($_SESSION['set'] < 4)
       {
@@ -108,9 +135,9 @@
             echo "<br />";
           }
         }
-        /*Do the score thingy here*/
+        /*Score results*/
       } else {
-        echo "<h1>Score: " . $_SESSION['score'] . "</h1>";
+        echo "<h1>Score: " . $_SESSION['score'] ."<p>$score/20</p>" . "</h1>";
       }
     ?>
     <input type="submit" name="submit" value="Next">
