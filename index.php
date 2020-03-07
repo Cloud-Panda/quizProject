@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>What is your artistic outlet??</title>
+    <title>Fashion World Knowledge</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -17,13 +17,12 @@
 
       <!--right section-->
       <div class="image-section">
-        
-
      </div>
 
       <!--left section-->
       <div class="btn-section">
-        
+      <h1>Fashion World Knowledge</h1>
+        <p>Do you think you know the fashion world?</p>
         <form action="process.php">
             <button>Sart Quiz</button>
         </form>

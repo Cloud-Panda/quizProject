@@ -14,12 +14,12 @@ width:100wh;
     height:100vh;
     width:50%;
     float:left;
-    background-color:red;
+    background-color:rgb(172, 133, 111);
     
 }
 
 .about-section{
-    background-color: blueviolet;
+    background-color:rgb(123, 154, 172);
     height:50%;
     width:44%;
     display:inline-block;
@@ -31,9 +31,39 @@ width:100wh;
     height:49.8%;
     width: 49%;
     display:inline-block;
-    background-color:orange;
+    background-color:eggshell;
     text-align:center;
  
 }
 
+
+.btn-section button{
+    border-radius: 7px;
+    width:150px;
+    height:50px;
+    border-style: none;
+    outline:none;
+}
+
+.btn-section h1{
+    margin-bottom:50px;
+    /*font-family:'Antic Didone', serif;*/
+    /*font-family: 'Reenie Beanie', cursive;*/
+    font-family: 'Cinzel Decorative', cursive;
+    
+}
+
+.btn-section p{
+    margin-bottom:50px;
+    font-family: 'Cinzel', serif;
+}
+
+.btn-section button:hover{
+    background-color: rgb(153,164,155);
+    border-style: none;
+}
+
+hr{
+    width:50%;
+}
 
