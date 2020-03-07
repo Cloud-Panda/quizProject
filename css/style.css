@@ -1,0 +1,39 @@
+body{
+    margin:0;
+    padding:0;
+    display:grid;
+    min-height:100vh;
+}
+
+.container{
+height:100vh;
+width:100wh;
+}
+
+.image-section{
+    height:100vh;
+    width:50%;
+    float:left;
+    background-color:red;
+    
+}
+
+.about-section{
+    background-color: blueviolet;
+    height:50%;
+    width:44%;
+    display:inline-block;
+    text-align: center;
+    margin-left:70px;
+}
+
+.btn-section{
+    height:49.8%;
+    width: 49%;
+    display:inline-block;
+    background-color:orange;
+    text-align:center;
+ 
+}
+
+
