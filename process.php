@@ -115,24 +115,29 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>PHP Quiz</title>
-    
+    <link rel="stylesheet" type="text/css" href="css/quiz.css">
 </head>
+
 <body>
   <form method="post" action="process.php" class="form">
   <!--Output of questions and answers-->
+  <div class="container-wrap">
+  <div class="container">
     <?php
       if ($_SESSION['set'] < 4)
       {
         for ($i = 0; $i < 5; $i++)
         {
-          echo "<h2>" . $questions[$i] . "</h2>";
+          echo "<h2 id='question-btn'>" . $questions[$i] . "</h2>";
           for ($k = 0; $k < 4; $k++)
           {
-            echo "<input type='radio' name='answer-$i' value='" . $answers[$i][$k] . "' required />";
-            echo "<label for='answer-$i'>" . $answers[$i][$k] . "</label>";
+            echo "<div id='border-thing'>";
+            echo "<input type='radio' id='radio-btn' name='answer-$i' value='" . $answers[$i][$k] . "' required />";
+            echo "<label id='radio-btn' for='answer-$i'>" . $answers[$i][$k] . "</label>";
             echo "<br />";
+            echo "</div>";
           }
         }
         /*Score results*/
@@ -140,7 +145,9 @@
         echo "<h1>Score: " . $_SESSION['score'] ."<p>$score/20</p>" . "</h1>";
       }
     ?>
-    <input type="submit" name="submit" value="Next">
+    <input type="submit" name="submit" value="Next" id="next-btn">
   </form>
+  </div>
+    </div>
 </body>
 </html>
