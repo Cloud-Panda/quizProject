@@ -2,11 +2,11 @@
   session_start();
 
   $questions = array(
-    "Question 1",
-    "Question 2",
-    "Question 3",
-    "Question 4",
-    "Question 5"
+    "Who is the richest model in the world?",
+    "In what year did New York fashion week start?",
+    "How many fashion weeks are there per year?",
+    "Who is the Creative Director of Louis Vuitton? ",
+    "Doc Martens were first created from what material?"
   );
 
   $answers = array(
@@ -55,11 +55,11 @@
   
   if ($_SESSION['set'] == 1) {
     $questions = array(
-      "Question 6",
-      "Question 7",
-      "Question 8",
-      "Question 9",
-      "Question 10"
+      "Who is the highest paid model?",
+      "Is kylie Jenner considered a model?",
+      "How many Vogue cover's has Kim Kardashian had?",
+      "When did woman's shoes start to differ from men?",
+      "where did Levi originate?"
     );
     
     $answers = array(
@@ -74,10 +74,10 @@
     $correct_answers = array("A", "E", "J", "O", "T");
   } else if ($_SESSION['set'] == 2) {
     $questions = array(
-      "Question 11",
-      "Question 12",
-      "Question 13",
-      "Question 14",
+      "In what type of building is the Met Gala hosted in?",
+      "Where do shoes with pointy shoes come from?",
+      "What is the most judged shoe to wear?",
+      "How old is the ritual for wearing black to a funeral?",
       "Question 15"
     );
     
@@ -92,11 +92,11 @@
     $correct_answers = array("B", "E", "I", "N", "R");
   } else if ($_SESSION['set'] == 3) {
     $questions = array(
-      "Question 16",
-      "Question 17",
-      "Question 18",
-      "Question 19",
-      "Question 20"
+      "How old is Vogue magazine?",
+      "Who started the trend regards to lip plumpers?",
+      "Who is not a Victoria Secret Angel?",
+      "Wich of the following is not a model?",
+      "Who of the following has never been at the Met Gala?"
     );
     
     $answers = array(
