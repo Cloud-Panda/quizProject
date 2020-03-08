@@ -11,28 +11,43 @@
 
   </head>
   <body>
-      <header>
+    <!--JS script tags -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js" integrity="sha256-ABrLsV2caVEMCBfm3eNhv/CYQG+tGCqzw2f4b/Pag0M=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TimelineMax.min.js" integrity="sha256-v/YsEqWkVsiNHryCWg+vjC/eDBakMAgOsCJRa0kNPOg=" crossorigin="anonymous"></script>
+    <script src="scripts/animation.js"></script>
+  <header>
+      <section>
 
         <div class="container">
-
       <!--right section-->
+
+
       <div class="image-section">
+        <div class="hero">
+          <img src="./images/6.jpg">
+          <h1 class="headline">VOGUE</h1>
+        </div>
+        <div class="slider"></div>
      </div>
 
       <!--left section-->
       <div class="btn-section">
-      <h1>Fashion World Knowledge</h1>
+      <h1>The World Of Fashion</h1>
         <p>Do you think you know the fashion world?</p>
+        <hr>
         <form action="process.php">
             <button>Sart Quiz</button>
         </form>
       </div> 
 
+      <!--about-section-->
       <div class="about-section">
+        <img src="./images/22.jpg" id="about-img">
       </div>
 
-      </div>
-      </header>
-   
+         </div>
+        </section>
+    
+</section>
   </body>
 </html>
