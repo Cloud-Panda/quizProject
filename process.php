@@ -1,30 +1,99 @@
 <?php
   session_start();
 
-  $questions = array(
-    "Who is the richest model in the world?",
-    "In what year did New York fashion week start?",
-    "How many fashion weeks are there per year?",
-    "Who is the Creative Director of Louis Vuitton? ",
-    "Doc Martens were first created from what material?"
-  );
+  /*Process of scoring */
+  if (!isset($_SESSION['set']) || !isset($_POST['submit']))
+  {
+    $_SESSION['score'] = 0;
+    $_SESSION['set'] = 0;
+  }
 
-  $answers = array(
-    array("A", "B", "C", "D"),
-    array("E", "F", "G", "H"),
-    array("I", "J", "K", "L"),
-    array("M", "N", "O", "P"),
-    array("Q", "R", "S", "T")
-  );
+  if ($_SESSION['set'] == 0) {
+    $questions = array(
+      "1. Who is the richest model in the world?",
+      "2. In what year did New York fashion week start?",
+      "3. How many fashion weeks are there per year?",
+      "4. Who is the Creative Director of Louis Vuitton? ",
+      "5. Doc Martens were first created from what material?"
+    );
 
-  $correct_answers = array("B", "F", "J", "N", "Q");
- /*Out put of answers */
+    $answers = array(
+      array("A", "B", "C", "D"),
+      array("E", "F", "G", "H"),
+      array("I", "J", "K", "L"),
+      array("M", "N", "O", "P"),
+      array("Q", "R", "S", "T")
+    );
+
+    $correct_answers = array("B", "F", "J", "N", "Q");
+  }
+  
+  else if ($_SESSION['set'] == 1) {
+    $questions = array(
+      "6. Who is the highest paid model?",
+      "7. Is kylie Jenner considered a model?",
+      "8. How many Vogue cover's has Kim Kardashian had?",
+      "9. When did woman's shoes start to differ from men?",
+      "10. where did Levi originate?"
+    );
+    
+    $answers = array(
+      array("A", "B", "C", "D"),
+      array("E", "F", "G", "H"),
+      array("I", "J", "K", "L"),
+      array("M", "N", "O", "P"),
+      array("Q", "R", "S", "T")
+    );
+    
+    
+    $correct_answers = array("A", "E", "J", "O", "T");
+    }
+    else if ($_SESSION['set'] == 2) {
+    $questions = array(
+      "11. In what type of building is the Met Gala hosted in?",
+      "12. Where do shoes with pointy shoes come from?",
+      "13. What is the most judged shoe to wear?",
+      "14. How old is the ritual for wearing black to a funeral?",
+      "15. What is an appropriate name linked with 'bikini>'"
+    );
+    
+    $answers = array(
+      array("A", "B", "C", "D"),
+      array("E", "F", "G", "H"),
+      array("I", "J", "K", "L"),
+      array("M", "N", "O", "P"),
+      array("Q", "R", "S", "T")
+    );
+    
+    $correct_answers = array("B", "E", "I", "N", "R");
+  } else if ($_SESSION['set'] == 3) {
+    $questions = array(
+      "16. How old is Vogue magazine?",
+      "17. Who started the trend regards to lip plumpers?",
+      "18. Who is not a Victoria Secret Angel?",
+      "19. Wich of the following is not a model?",
+      "20. Who of the following has never been at the Met Gala?"
+    );
+    
+    $answers = array(
+      array("A", "B", "C", "D"),
+      array("E", "F", "G", "H"),
+      array("I", "J", "K", "L"),
+      array("M", "N", "O", "P"),
+      array("Q", "R", "S", "T")
+    );
+    
+    $correct_answers = array("A", "H", "I", "O", "R");
+  }
+
+  /*Out put of answers */
   if (isset($_POST['submit'])) {
     $answer_1 = $_POST['answer-0'];
     $answer_2 = $_POST['answer-1'];
     $answer_3 = $_POST['answer-2'];
     $answer_4 = $_POST['answer-3'];
     $answer_5 = $_POST['answer-4'];
+
 
 /*Scoring */
     $score = $_SESSION['score'];
@@ -41,73 +110,8 @@
       $score++;
     }
     
-    $_SESSION['score'] = $score;
-  }
-  /*Process of scoring */
-  if (!isset($_SESSION['set']) || !isset($_POST['submit']))
-  {
-    $_SESSION['score'] = 0;
-    $_SESSION['set'] = 0;
-  }
-  else {
     $_SESSION['set'] = $_SESSION['set'] + 1;
-  }
-  
-  if ($_SESSION['set'] == 1) {
-    $questions = array(
-      "Who is the highest paid model?",
-      "Is kylie Jenner considered a model?",
-      "How many Vogue cover's has Kim Kardashian had?",
-      "When did woman's shoes start to differ from men?",
-      "where did Levi originate?"
-    );
-    
-    $answers = array(
-      array("A", "B", "C", "D"),
-      array("E", "F", "G", "H"),
-      array("I", "J", "K", "L"),
-      array("M", "N", "O", "P"),
-      array("Q", "R", "S", "T")
-    );
-    
-    
-    $correct_answers = array("A", "E", "J", "O", "T");
-  } else if ($_SESSION['set'] == 2) {
-    $questions = array(
-      "In what type of building is the Met Gala hosted in?",
-      "Where do shoes with pointy shoes come from?",
-      "What is the most judged shoe to wear?",
-      "How old is the ritual for wearing black to a funeral?",
-      "Question 15"
-    );
-    
-    $answers = array(
-      array("A", "B", "C", "D"),
-      array("E", "F", "G", "H"),
-      array("I", "J", "K", "L"),
-      array("M", "N", "O", "P"),
-      array("Q", "R", "S", "T")
-    );
-    
-    $correct_answers = array("B", "E", "I", "N", "R");
-  } else if ($_SESSION['set'] == 3) {
-    $questions = array(
-      "How old is Vogue magazine?",
-      "Who started the trend regards to lip plumpers?",
-      "Who is not a Victoria Secret Angel?",
-      "Wich of the following is not a model?",
-      "Who of the following has never been at the Met Gala?"
-    );
-    
-    $answers = array(
-      array("A", "B", "C", "D"),
-      array("E", "F", "G", "H"),
-      array("I", "J", "K", "L"),
-      array("M", "N", "O", "P"),
-      array("Q", "R", "S", "T")
-    );
-    
-    $correct_answers = array("A", "B", "I", "O", "R");
+    $_SESSION['score'] = $score;
   }
   ?>
 
@@ -144,12 +148,24 @@
             echo "</div>";
           }
         }
+        echo  '<input type="submit" name="submit" value="Next" id="next-btn">';
         /*Score results*/
-      } else {
-        echo "<h1>Score: " . $_SESSION['score'] ."<p>$score/20</p>" . "</h1>";
+      } 
+      else {
+        // echo "<h1>Score: "."<p>/20</p>" . "</h1>"
+        /*echo $_SESSION['score'];*/
+        if ($score <= 9){
+        echo "<h1 id='score-h1'>Score:$score/20 "."<p>You did your best, you can always try again</p>" . "</h1>";
+        }
+        else if($score <= 15){
+          echo "<h1 id='score-h1'>Score:$score/20 "."<p>You did okay, maybe a bit more research and you'll be a pro</p>" . "</h1>";
+        }
+        else if ($score >=16){
+          echo "<h1>Score:$score/20 "."<p>I guess you proved me wrong. Congratulaitons </p>" . "</h1>";
+        }
       }
     ?>
-    <input type="submit" name="submit" value="Next" id="next-btn">
+   
   </form>
   </div>
     </div>

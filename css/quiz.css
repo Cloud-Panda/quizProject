@@ -47,7 +47,10 @@ body{
 }
 
 #next-btn:hover{
-    background:rgb(155, 99, 73);
-    
+    background:rgb(155, 99, 73)
 
+}
+
+#score-h1{
+    text-align:center;
 }
