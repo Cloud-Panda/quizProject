@@ -118,6 +118,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>PHP Quiz</title>
     <link rel="stylesheet" type="text/css" href="css/quiz.css">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel|Cinzel+Decorative" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Caladea&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|EB+Garamond|Libre+Baskerville|Playfair+Display&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -130,7 +134,7 @@
       {
         for ($i = 0; $i < 5; $i++)
         {
-          echo "<h2 id='question-btn'>" . $questions[$i] . "</h2>";
+          echo "<h2>" . $questions[$i] . "</h2>";
           for ($k = 0; $k < 4; $k++)
           {
             echo "<div id='border-thing'>";
