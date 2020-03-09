@@ -56,7 +56,7 @@ body{
 }
 
 /*********************************************MEDIA QUERIES BELOW*******************************************/
-@media screen and (max-width: 608px)
+@media screen and (max-width: 425px)
 {
     .container{
         width:100%;
@@ -67,3 +67,11 @@ body{
         font-size: 16px;
     }
 }
+@media screen and (min-width: 768px)
+{
+
+    .container h2{
+        font-size: 20px;
+    }
+}
+
