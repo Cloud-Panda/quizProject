@@ -3,11 +3,12 @@
 
   /*Process of scoring */
   if (!isset($_SESSION['set']) || !isset($_POST['submit']))
-  {
-    $_SESSION['score'] = 0;
-    $_SESSION['set'] = 0;
-  
-  }
+    {
+      $_SESSION['score'] = 0;
+      $_SESSION['set'] = 0;
+     
+    
+    }
 
   if ($_SESSION['set'] == 0) {
     $questions = array(
@@ -25,10 +26,16 @@
       array("Adidas", "Kanye West", "Nike", "Random guy who sold it for millions"),
       array("Old tires", "Leather", "Plastic", "Silk")
     );
-
+    
     $correct_answers = array("Gisele Bündchen", "1943", "40", "Kanye West", "Old tires");
   }
-  
+  if (!isset($_SESSION['set']) || !isset($_POST['submit']))
+    {
+      $_SESSION['score'] = 0;
+      $_SESSION['set1'] = 1;
+     
+    
+    }
   else if ($_SESSION['set'] == 1) {
     $questions = array(
       "6. Who is the highest paid model?",
@@ -48,6 +55,13 @@
     
     $correct_answers = array("Kendall Jenner", "Yes", "8", "15th Century", "San Francisco");
     }
+    if (!isset($_SESSION['set']) || !isset($_POST['submit']))
+    {
+      $_SESSION['score'] = 0;
+      $_SESSION['set2'] = 2;
+     
+    
+    }
     else if ($_SESSION['set'] == 2) {
     $questions = array(
       "11. In what type of building is the Met Gala hosted in?",
@@ -64,7 +78,13 @@
       array("Decades", "Thousands of years", "Millions of years", "Hundreds of years"),
       array("Bather", "Bombshell", "Two-piece", "Babe")
     );
+    if (!isset($_SESSION['set']) || !isset($_POST['submit']))
+    {
+      $_SESSION['score'] = 0;
+      $_SESSION['set3'] = 3;
+     
     
+    }
     $correct_answers = array("Art Museum", "Poland", "Crocs", "Thousands of years", "Bombshell");
   } else if ($_SESSION['set'] == 3) {
     $questions = array(
@@ -110,8 +130,7 @@
       $score++;
     }
     
-    $_SESSION['set'] = $_SESSION['set'] + 1;
-    $_SESSION['score'] = $score;
+   
   }
   ?>
 
@@ -147,6 +166,22 @@
             echo "<label id='radio-btn' for='answer-$i'>" . $answers[$i][$k] . "</label>";
             echo "<br />";
             echo "</div>";
+            
+          }
+        }
+        if ($_SESSION['set'] < 4)
+      {
+        for ($i = 0 ; $i < 5; $i++)
+        {
+          echo "<h2>" . $questions[$i] . "</h2>";
+          for ($k = 0; $k < 4; $k++)
+          {
+            echo "<div id='border-thing'>";
+            echo "<input type='radio' id='radio-btn' name='answer-$i' value='" . $answers[$i][$k] . "' required />";
+            echo "<label id='radio-btn' for='answer-$i'>" . $answers[$i][$k] . "</label>";
+            echo "<br />";
+            echo "</div>";
+            
           }
         }
         echo  '<input type="submit" name="submit" value="Next" id="next-btn">';

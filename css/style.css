@@ -108,5 +108,18 @@ width:100wh;
     object-fit: cover;
 }
 
+/*****************MEDIA QUERIES FOR LANDING PAGE****************************/
+
+@media screen (min-width:50px) and (max-width:425px){
+
+    .image-section h1{
+        font-size:20px!important;
+    }
+
+   .image-section{
+       margin:auto;
+   }
+}
+
 
 
