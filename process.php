@@ -13,16 +13,16 @@
       "1. Who is the richest model in the world?",
       "2. In what year did New York fashion week start?",
       "3. How many fashion weeks are there per year?",
-      "4. Who is the Creative Director of Louis Vuitton? ",
+      "4. Who created the brand 'Yeezy' ",
       "5. Doc Martens were first created from what material?"
     );
 
     $answers = array(
-      array("A", "B", "C", "D"),
-      array("E", "F", "G", "H"),
-      array("I", "J", "K", "L"),
-      array("M", "N", "O", "P"),
-      array("Q", "R", "S", "T")
+      array("Kendall Jenner", "Gisele Bündchen", "Selena Gomez", "Gigi Hadid"),
+      array("1987", "1943", "1912", "1992"),
+      array("1", "40", "70", "5"),
+      array("Adidas", "Kanye West", "Nike", "Random guy who sold it for millions"),
+      array("Old tires", "Leather", "Plastic", "Silk")
     );
 
     $correct_answers = array("B", "F", "J", "N", "Q");
@@ -38,11 +38,11 @@
     );
     
     $answers = array(
-      array("A", "B", "C", "D"),
-      array("E", "F", "G", "H"),
-      array("I", "J", "K", "L"),
-      array("M", "N", "O", "P"),
-      array("Q", "R", "S", "T")
+      array("Kendall Jenner", "Gigi Hadid", "Cara Delevine", "Taylor Swift"),
+      array("Yes", "No", "Maybe", "Who is that?"),
+      array("20", "8", "5", "10"),
+      array("2000's", "1919", "15th Century", "100BC"),
+      array("South Africa", "Germany", "Italy", "San Francisco")
     );
     
     
@@ -51,18 +51,18 @@
     else if ($_SESSION['set'] == 2) {
     $questions = array(
       "11. In what type of building is the Met Gala hosted in?",
-      "12. Where do shoes with pointy shoes come from?",
+      "12. Where do shoes with pointy toes come from?",
       "13. What is the most judged shoe to wear?",
       "14. How old is the ritual for wearing black to a funeral?",
       "15. What is an appropriate name linked with 'bikini>'"
     );
     
     $answers = array(
-      array("A", "B", "C", "D"),
-      array("E", "F", "G", "H"),
-      array("I", "J", "K", "L"),
-      array("M", "N", "O", "P"),
-      array("Q", "R", "S", "T")
+      array("Movie Theatre", "Art Museum", "Bussiness Building", "School"),
+      array("Poland", "England", "Germany", "USA"),
+      array("Crocks", "Jelly babies", "Gum boots", "Uggs"),
+      array("Decades", "Thousands of years", "Millions of years", "Hundreds of years"),
+      array("Bather", "Bombshell", "Two-piece", "Babe")
     );
     
     $correct_answers = array("B", "E", "I", "N", "R");
@@ -76,11 +76,11 @@
     );
     
     $answers = array(
-      array("A", "B", "C", "D"),
-      array("E", "F", "G", "H"),
-      array("I", "J", "K", "L"),
-      array("M", "N", "O", "P"),
-      array("Q", "R", "S", "T")
+      array("128years", "50years", "60years", "10years"),
+      array("Kim Kardashian", "Human Ken doll", "Cardi-B", "Kylie Jenner"),
+      array("Ariana Grande", "Kendall Jenner", "GIgi Hadid", "Bella Hadid"),
+      array("Kylie Jenner", "Kim Kardashian", "Candice Swaneapoel", "Jacob Zuma"),
+      array("Kris Jenner", "Khloe Kardashian", "Zayn Malik", "Harry Styles")
     );
     
     $correct_answers = array("A", "H", "I", "O", "R");
