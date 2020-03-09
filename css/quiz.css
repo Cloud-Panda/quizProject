@@ -63,4 +63,7 @@ body{
         height:50%;
     }
 
-    
+    .container h2{
+        font-size: 16px;
+    }
+}
