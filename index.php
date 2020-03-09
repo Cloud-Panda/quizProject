@@ -31,7 +31,7 @@
         <p>Ready to test your fashion knowledge?</p>
         <hr id="btn-hr"/>
         <form action="process.php">
-            <button><b>Sart Quiz</b></button>
+            <button><b>Start Quiz</b></button>
         </form>
       </div> 
 
