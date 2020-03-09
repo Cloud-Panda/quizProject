@@ -6,6 +6,7 @@
   {
     $_SESSION['score'] = 0;
     $_SESSION['set'] = 0;
+  
   }
 
   if ($_SESSION['set'] == 0) {
@@ -25,7 +26,7 @@
       array("Old tires", "Leather", "Plastic", "Silk")
     );
 
-    $correct_answers = array("B", "F", "J", "N", "Q");
+    $correct_answers = array("Gisele Bündchen", "1943", "40", "Kanye West", "Old tires");
   }
   
   else if ($_SESSION['set'] == 1) {
@@ -34,7 +35,7 @@
       "7. Is kylie Jenner considered a model?",
       "8. How many Vogue cover's has Kim Kardashian had?",
       "9. When did woman's shoes start to differ from men?",
-      "10. where did Levi originate?"
+      "10. Where did Levi originate?"
     );
     
     $answers = array(
@@ -45,8 +46,7 @@
       array("South Africa", "Germany", "Italy", "San Francisco")
     );
     
-    
-    $correct_answers = array("A", "E", "J", "O", "T");
+    $correct_answers = array("Kendall Jenner", "Yes", "8", "15th Century", "San Francisco");
     }
     else if ($_SESSION['set'] == 2) {
     $questions = array(
@@ -54,36 +54,36 @@
       "12. Where do shoes with pointy toes come from?",
       "13. What is the most judged shoe to wear?",
       "14. How old is the ritual for wearing black to a funeral?",
-      "15. What is an appropriate name linked with 'bikini>'"
+      "15. What is an appropriate name linked with 'bikini'"
     );
     
     $answers = array(
       array("Movie Theatre", "Art Museum", "Bussiness Building", "School"),
       array("Poland", "England", "Germany", "USA"),
-      array("Crocks", "Jelly babies", "Gum boots", "Uggs"),
+      array("Crocs", "Jelly babies", "Gum boots", "Uggs"),
       array("Decades", "Thousands of years", "Millions of years", "Hundreds of years"),
       array("Bather", "Bombshell", "Two-piece", "Babe")
     );
     
-    $correct_answers = array("B", "E", "I", "N", "R");
+    $correct_answers = array("Art Museum", "Poland", "Crocs", "Thousands of years", "Bombshell");
   } else if ($_SESSION['set'] == 3) {
     $questions = array(
       "16. How old is Vogue magazine?",
       "17. Who started the trend regards to lip plumpers?",
       "18. Who is not a Victoria Secret Angel?",
-      "19. Wich of the following is not a model?",
+      "19. Which of the following is not a model?",
       "20. Who of the following has never been at the Met Gala?"
     );
     
     $answers = array(
       array("128years", "50years", "60years", "10years"),
       array("Kim Kardashian", "Human Ken doll", "Cardi-B", "Kylie Jenner"),
-      array("Ariana Grande", "Kendall Jenner", "GIgi Hadid", "Bella Hadid"),
-      array("Kylie Jenner", "Kim Kardashian", "Candice Swaneapoel", "Jacob Zuma"),
+      array("Ariana Grande", "Kendall Jenner", "Gigi Hadid", "Bella Hadid"),
+      array("Kylie Jenner", "Kim Kardashian", "Candice Swaneapoel", "Devon"),
       array("Kris Jenner", "Khloe Kardashian", "Zayn Malik", "Harry Styles")
     );
     
-    $correct_answers = array("A", "H", "I", "O", "R");
+    $correct_answers = array("128years", "Kylie Jenner", "Ariana Grande", "Devon", "Khloe Kardashian");
   }
 
   /*Out put of answers */
@@ -130,13 +130,14 @@
 
 <body>
   <form method="post" action="process.php" class="form">
-  <!--Output of questions and answers-->
+  
   <div class="container-wrap">
   <div class="container">
     <?php
+    /*-Output of questions and answers*/
       if ($_SESSION['set'] < 4)
       {
-        for ($i = 0; $i < 5; $i++)
+        for ($i = 0 ; $i < 5; $i++)
         {
           echo "<h2>" . $questions[$i] . "</h2>";
           for ($k = 0; $k < 4; $k++)
@@ -149,7 +150,7 @@
           }
         }
         echo  '<input type="submit" name="submit" value="Next" id="next-btn">';
-        /*Score results*/
+        /******************Score results**************/
       } 
       else {
         // echo "<h1>Score: "."<p>/20</p>" . "</h1>"
@@ -164,6 +165,8 @@
           echo "<h1>Score:$score/20 "."<p>I guess you proved me wrong. Congratulaitons </p>" . "</h1>";
         }
       }
+    
+      
     ?>
    
   </form>
