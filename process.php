@@ -180,13 +180,13 @@
       else {
         // echo "<h1>Score: "."<p>/20</p>" . "</h1>"
         if ($score <= 9){
-        echo "<h1 id='score-h1'>Score:$score/20 "."<p>You did your best, you can always try again</p>" . "</h1>";
+        echo "<h1 id='score-h1'>Score:$score/20 "."<p>Ag Shame! You did your best, you can always try again</p>" . "</h1>";
         }
         else if($score <= 15){
-          echo "<h1 id='score-h1'>Score:$score/20 "."<p>You did okay, maybe a bit more research and you'll be a pro</p>" . "</h1>";
+          echo "<h1 id='score-h1'>Score:$score/20 "."<p>Meh, you did okay.</p>" . "</h1>";
         }
         else if ($score >=16){
-          echo "<h1>Score:$score/20 "."<p>I guess you proved me wrong. Congratulaitons </p>" . "</h1>";
+          echo "<h1 id='score-h1'>Score:$score/20 "."<p>Yay for you *jazz hands* </p>" . "</h1>";
         }
       }
     
