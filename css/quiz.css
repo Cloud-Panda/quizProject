@@ -11,14 +11,21 @@ body{
     border-radius: 7px;
     background-color:rgb(219, 210, 202);
     overflow:hidden;
-    -webkit-transition: all 1s ease;
-	-moz-transition: all 1s ease;
-	-o-transition: all 1s ease;
-	transition: all 1s ease;
+    background-image: linear-gradient(to left,
+    transparent,
+    transparent 50%,
+    #a99e89 50%,
+    #7d6551);
+background-position: 100% 0;
+background-size: 200% 100%;
+transition: all .25s ease-in;
+
+
 }
+
 #border-thing:hover {    
-    background-color:brown;
-    font:white;
+    color:rgb(241, 233, 233);
+    background-position:0 0;
 }
 
     
