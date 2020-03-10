@@ -3,12 +3,11 @@
 
   /*Process of scoring */
   if (!isset($_SESSION['set']) || !isset($_POST['submit']))
-    {
-      $_SESSION['score'] = 0;
-      $_SESSION['set'] = 0;
-     
-    
-    }
+  {
+    $_SESSION['score'] = 0;
+    $_SESSION['set'] = 0;
+    $set = $_SESSION['set'];
+  }
 
   if ($_SESSION['set'] == 0) {
     $questions = array(
@@ -27,15 +26,9 @@
       array("Old tires", "Leather", "Plastic", "Silk")
     );
     
-    $correct_answers = array("Gisele Bündchen", "1943", "40", "Kanye West", "Old tires");
+    $_SESSION['set'] = $_SESSION['set'] + 1;
   }
-  if (!isset($_SESSION['set']) || !isset($_POST['submit']))
-    {
-      $_SESSION['score'] = 0;
-      $_SESSION['set1'] = 1;
-     
-    
-    }
+
   else if ($_SESSION['set'] == 1) {
     $questions = array(
       "6. Who is the highest paid model?",
@@ -53,15 +46,8 @@
       array("South Africa", "Germany", "Italy", "San Francisco")
     );
     
-    $correct_answers = array("Kendall Jenner", "Yes", "8", "15th Century", "San Francisco");
-    }
-    if (!isset($_SESSION['set']) || !isset($_POST['submit']))
-    {
-      $_SESSION['score'] = 0;
-      $_SESSION['set2'] = 2;
-     
-    
-    }
+    $_SESSION['set'] = $_SESSION['set'] + 1;  
+  }
     else if ($_SESSION['set'] == 2) {
     $questions = array(
       "11. In what type of building is the Met Gala hosted in?",
@@ -78,14 +64,8 @@
       array("Decades", "Thousands of years", "Millions of years", "Hundreds of years"),
       array("Bather", "Bombshell", "Two-piece", "Babe")
     );
-    if (!isset($_SESSION['set']) || !isset($_POST['submit']))
-    {
-      $_SESSION['score'] = 0;
-      $_SESSION['set3'] = 3;
-     
     
-    }
-    $correct_answers = array("Art Museum", "Poland", "Crocs", "Thousands of years", "Bombshell");
+    $_SESSION['set'] = $_SESSION['set'] + 1;
   } else if ($_SESSION['set'] == 3) {
     $questions = array(
       "16. How old is Vogue magazine?",
@@ -103,36 +83,58 @@
       array("Kris Jenner", "Khloe Kardashian", "Zayn Malik", "Harry Styles")
     );
     
-    $correct_answers = array("128years", "Kylie Jenner", "Ariana Grande", "Devon", "Khloe Kardashian");
-  }
+    $_SESSION['set'] = $_SESSION['set'] + 1;
+  }    
 
-  /*Out put of answers */
+  /*Out put of answers  hey i will be right back i just have to print something quixkly okay*/
   if (isset($_POST['submit'])) {
-    $answer_1 = $_POST['answer-0'];
-    $answer_2 = $_POST['answer-1'];
-    $answer_3 = $_POST['answer-2'];
-    $answer_4 = $_POST['answer-3'];
-    $answer_5 = $_POST['answer-4'];
-
-
-/*Scoring */
     $score = $_SESSION['score'];
-    
-    if ($answer_1 == $correct_answers[0]) {
-      $score++;
-    } if ($answer_2 == $correct_answers[1]) {
-      $score++;
-    } if ($answer_3 == $correct_answers[2]) {
-      $score++;
-    } if ($answer_4 == $correct_answers[3]) {
-      $score++;
-    } if ($answer_5 == $correct_answers[4]) {
-      $score++;
+    $set = $_SESSION['set'];
+
+    switch ($_SESSION['set'] - 2) {
+      case 0:
+        $correct_answers = array("Gisele Bündchen", "1943", "40", "Kanye West", "Old tires");
+        break;
+      case 1:
+        $correct_answers = array("Kendall Jenner", "Yes", "8", "15th Century", "San Francisco");
+        break;
+      case 2:
+        $correct_answers = array("Art Museum", "Poland", "Crocs", "Thousands of years", "Bombshell");
+         break;
+      case 3:
+        $correct_answers = array("128years", "Kylie Jenner", "Ariana Grande", "Devon", "Khloe Kardashian");
+        break;    
     }
+    if ($_SESSION['set'] <= 5)
+    {
+      $answer_1 = $_POST['answer-0'];
+      $answer_2 = $_POST['answer-1'];
+      $answer_3 = $_POST['answer-2'];
+      $answer_4 = $_POST['answer-3'];
+      $answer_5 = $_POST['answer-4'];
+  
+      /*Scoring */
+      
+      if ($answer_1 == $correct_answers[0]) {
+        $score++;
+      } if ($answer_2 == $correct_answers[1]) {
+        $score++;
+      } if ($answer_3 == $correct_answers[2]) {
+        $score++;
+      } if ($answer_4 == $correct_answers[3]) {
+        $score++;
+      } if ($answer_5 == $correct_answers[4]) {
+        $score++;
+      }
+    }
+
     
-   
+    $_SESSION['score'] = $score;
   }
-  ?>
+  if ($_SESSION['set'] == 4) {
+    $set = 4;
+  }
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -154,7 +156,7 @@
   <div class="container">
     <?php
     /*-Output of questions and answers*/
-      if ($_SESSION['set'] < 4)
+      if ($set <= 4 && $_SESSION['set'] <= 4)
       {
         for ($i = 0 ; $i < 5; $i++)
         {
@@ -169,27 +171,14 @@
             
           }
         }
-        if ($_SESSION['set'] < 4)
-      {
-        for ($i = 0 ; $i < 5; $i++)
-        {
-          echo "<h2>" . $questions[$i] . "</h2>";
-          for ($k = 0; $k < 4; $k++)
-          {
-            echo "<div id='border-thing'>";
-            echo "<input type='radio' id='radio-btn' name='answer-$i' value='" . $answers[$i][$k] . "' required />";
-            echo "<label id='radio-btn' for='answer-$i'>" . $answers[$i][$k] . "</label>";
-            echo "<br />";
-            echo "</div>";
-            
-          }
+        if ($_SESSION['set'] == 4) {
+          $_SESSION['set'] = 5;
         }
         echo  '<input type="submit" name="submit" value="Next" id="next-btn">';
         /******************Score results**************/
       } 
       else {
         // echo "<h1>Score: "."<p>/20</p>" . "</h1>"
-        /*echo $_SESSION['score'];*/
         if ($score <= 9){
         echo "<h1 id='score-h1'>Score:$score/20 "."<p>You did your best, you can always try again</p>" . "</h1>";
         }
