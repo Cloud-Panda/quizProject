@@ -14,39 +14,52 @@
   
   </head>
   <body>
-    
-      <header>
 
-        <div class="container">
+    <header>
 
-      <!--right section-->
-      <div class="image-section">
-        <h1>VOGUE</h1>
-        <img src="./images/30.jpg">
-        <p><i> “I like my money right where I can see it: <br>hanging in my closet.” </i></p> 
-     </div>
+      <div class="container">
 
-      <!--left section-->
-      <div class="btn-section">
-      <h1>The World Of Fashion</h1>
-        <p>Ready to test your fashion knowledge?</p>
-        <hr id="btn-hr"/>
-        <form action="process.php">
+  
+        <!--right section-->
+        <div class="image-section">
+
+          <h1>VOGUE</h1>
+          <img src="./images/30.jpg">
+          <p><i> “I like my money right where I can see it: <br>hanging in my closet.” </i></p> 
+
+        </div>
+
+
+        <!--left section-->
+        <div class="btn-section">
+
+          <h1>The World Of Fashion</h1>
+          <p>Ready to test your fashion knowledge?</p>
+          <hr id="btn-hr"/>
+
+
+          <form action="process.php">
             <button><b>Start Quiz</b></button>
-        </form>
-      </div> 
+          </form>
 
-      <div class="about-section">
-        <img src="./images/37.jpg" id="about-img">
+        </div> 
+
+        <div class="about-section">
+          <img src="./images/37.jpg" id="about-img">
+        </div>
+
       </div>
 
-      </div>
-      </header>
+    </header>
+
       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   </body>
 </html>
+
 <script>
-$(document).ready(function() {
+
+  $(document).ready(function() {
     $('.container').delay(500).fadeIn(1000);
-});
+  });
+  
 </script>

@@ -79,7 +79,7 @@
       array("128years", "50years", "60years", "10years"),
       array("Kim Kardashian", "Human Ken doll", "Cardi-B", "Kylie Jenner"),
       array("Ariana Grande", "Kendall Jenner", "Gigi Hadid", "Bella Hadid"),
-      array("Kylie Jenner", "Kim Kardashian", "Candice Swaneapoel", "Devon"),
+      array("Kylie Jenner", "Kim Kardashian", "Candice Swaneapoel", "Jacob Zuma"),
       array("Kris Jenner", "Khloe Kardashian", "Zayn Malik", "Harry Styles")
     );
     
@@ -102,7 +102,7 @@
         $correct_answers = array("Art Museum", "Poland", "Crocs", "Thousands of years", "Bombshell");
          break;
       case 3:
-        $correct_answers = array("128years", "Kylie Jenner", "Ariana Grande", "Devon", "Khloe Kardashian");
+        $correct_answers = array("128years", "Kylie Jenner", "Ariana Grande", "Jacob Zuma", "Khloe Kardashian");
         break;    
     }
     if ($_SESSION['set'] <= 5)
